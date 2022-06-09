@@ -2,6 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 
-<p>${sessionScope.E_WKK0005}</p>
+<p>${sessionScope.E_WKK0006}</p>
 
 <%@include file="../footer.html"%>

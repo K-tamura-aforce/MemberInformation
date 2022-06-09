@@ -2,6 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 
-会員情報の登録に失敗しました。
+<p>${sessionScope.E_WKK0002}</p>
 
 <%@include file="../footer.html"%>

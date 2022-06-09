@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.aforce.beans.MemberInfo;
 import jp.co.aforce.dao.MemberInfoDAO;
+import jp.co.aforce.values.Messages;
 
 @WebServlet(urlPatterns = { "/jp/co/aforce/action/RegistAction" })
 public class RegistAction extends HttpServlet {
@@ -22,7 +24,7 @@ public class RegistAction extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//		HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 
 		MemberInfo memberInfo = new MemberInfo();
 		memberInfo.setLast_name(request.getParameter("last_name"));
@@ -40,7 +42,7 @@ public class RegistAction extends HttpServlet {
 			int count = dao.selectCount(memberInfo);
 
 			if (count != 0) {
-				//				session.setAttribute("memberInfo", memberInfo);
+				session.setAttribute("E_WKK0001", Messages.E_WKK0001);
 				request.getRequestDispatcher("/views/regist-error.jsp").forward(request, response);
 			} else {
 
@@ -56,20 +58,17 @@ public class RegistAction extends HttpServlet {
 				int line = dao.insert(memberInfo);
 
 				if (line > 0) {
-
+					session.setAttribute("I_WKK0001", Messages.I_WKK0001);
 					request.getRequestDispatcher("/views/regist-in.jsp").forward(request, response);
-
-				} else {
-
-					request.getRequestDispatcher("/views/regist-error2.jsp").forward(request, response);
 				}
 
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			session.setAttribute("E_WKK0002", Messages.E_WKK0002);
+			request.getRequestDispatcher("/views/regist-error2.jsp").forward(request, response);
 		}
-
+		session.invalidate();
 	}
 
 }

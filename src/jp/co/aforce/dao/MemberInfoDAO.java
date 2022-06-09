@@ -64,7 +64,7 @@ public class MemberInfoDAO extends DAO {
 
 				Connection con = getConnection();
 
-				PreparedStatement st = con.prepareStatement("SELECT member_info.last_name, member_info.first_name, member_info.sex, member_info.birth_year, member_info.birth_month, member_info.birth_day, member_info.job, member_info.phone_number,member_info.mail_address FROM member_info WHERE member_info.member_id=?.member_id");
+				PreparedStatement st = con.prepareStatement("SELECT member_info.last_name, member_info.first_name, member_info.sex, member_info.birth_year, member_info.birth_month, member_info.birth_day, member_info.job, member_info.phone_number,member_info.mail_address FROM member_info WHERE member_info.member_id=?");
 				st.setString(1, member_id);
 				ResultSet rs = st.executeQuery();
 
@@ -86,5 +86,42 @@ public class MemberInfoDAO extends DAO {
 
 				return memberInfo;
 			}
+
+	public int update(MemberInfo memberInfo) throws Exception{
+
+		int line = 0;
+		Connection con = getConnection();
+		PreparedStatement st = con.prepareStatement("UPDATE member_info SET member_info.last_name=?, member_info.first_name=?, member_info.sex=?, member_info.birth_year=?, member_info.birth_month=?, member_info.birth_day=?, member_info.job=?, member_info.phone_number=?,member_info.mail_address=? WHERE member_info.member_id=?");
+		st.setString(1, memberInfo.getLast_name());
+		st.setString(2, memberInfo.getFirst_name());
+		st.setString(3, memberInfo.getSex());
+		st.setInt(4, memberInfo.getBirth_year());
+		st.setInt(5, memberInfo.getBirth_month());
+		st.setInt(6, memberInfo.getBirth_day());
+		st.setString(7, memberInfo.getJob());
+		st.setString(8, memberInfo.getPhone_number());
+		st.setString(9, memberInfo.getMail_address());
+		st.setString(10, memberInfo.getMember_id());
+		line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
+
+	}
+
+	public int deleate(MemberInfo memberInfo) throws Exception{
+		int line = 0;
+		Connection con = getConnection();
+		PreparedStatement st = con.prepareStatement("DELETE FROM member_info WHERE member_info.member_id=?");
+		st.setString(1, memberInfo.getMember_id());
+		line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
+	}
 
 }

@@ -2,6 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 
-会員情報の登録が完了しました。
+<p>${sessionScope.I_WKK0001}</p>
 
 <%@include file="../footer.html"%>
