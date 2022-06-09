@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.error-message {
+  font-size: 12px;
+  color: #ff7676;
+  display: none; /* 非表示に */
+}
+/* :invalid時だけ隣の要素を表示 */
+input:invalid + .error-message{
+  display: block;
+}
+
