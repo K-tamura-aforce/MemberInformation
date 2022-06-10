@@ -13,11 +13,13 @@ public class MenuUpdate extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		response.sendRedirect("/MemberInformation/views/menu.jsp");
+
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-				request.getRequestDispatcher("/views/update.jsp").forward(request, response);
+		response.sendRedirect("/MemberInformation/views/update.jsp");
 
 		}
 

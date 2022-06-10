@@ -12,7 +12,7 @@
 
 <h3>会員情報削除</h3>
 
-<form action="../jp/co/aforce/action/DisplayAction2" method="post">
+<form action="../action/DisplayAction2" method="post">
 
 	<p>■会員番号</p>
 	<p>
@@ -88,10 +88,11 @@
 		<input type="text" size="32" name="mail_address"
 			value="${sessionScope.memberInfo.mail_address}" disabled>
 	<p>
-		<a href="../jp/co/aforce/transition/MenuDelete">
+		<a href="../transition/MenuDelete">
 			<button type="button">戻る</button>
-		</a><a href="../jp/co/aforce/transition/MenuDeleteReset">
-			<button type="button">リセット</button></a>
+		</a> <a href="../transition/MenuDeleteReset">
+			<button type="button">リセット</button>
+		</a>
 		<button type="submit">削除</button>
 	</p>
 </form>

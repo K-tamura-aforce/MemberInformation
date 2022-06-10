@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../header.html"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>会員情報登録</title>
+</head>
+<body>
 
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body>
 
@@ -52,10 +58,14 @@
 		<p>■メールアドレス</p>
 		<p>
 			<input type="text" size="32" name="mail_address" required>
-		<p>
-			<input type="button" onclick="window.history.back();" value="戻る"><input
-				type="reset" value="リセット"><input type="submit" value="登録">
 		</p>
+
+		<a href="../jp/co/aforce/transition/MenuRegist">
+			<button type="button">戻る</button>
+		</a> <a href="../jp/co/aforce/transition/MenuRegistReset">
+			<button type="button">リセット</button>
+		</a>
+		<button type="submit">登録</button>
 	</form>
 
 	<%@include file="../footer.html"%>

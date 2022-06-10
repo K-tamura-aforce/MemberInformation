@@ -13,11 +13,12 @@ public class MenuDelete extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		response.sendRedirect("/MemberInformation/views/menu.jsp");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-				request.getRequestDispatcher("/views/delete.jsp").forward(request, response);
+		response.sendRedirect("/MemberInformation/views/delete.jsp");
 
 		}
 

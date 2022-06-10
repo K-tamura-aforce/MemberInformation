@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../header.html"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>会員情報更新</title>
+</head>
+<body>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -10,7 +16,8 @@
 
 	<p>■会員番号</p>
 	<p>
-		<input type="text" size="20" name="member_id" value="${sessionScope.member_id}" required>
+		<input type="text" size="20" name="member_id"
+			value="${sessionScope.member_id}" required>
 	</p>
 	<p>
 		<input type="submit" value="検索">
@@ -18,9 +25,10 @@
 
 </form>
 
-<form action="../aforce/UpdateAction/" method="post">
+<form action="../action/UpdateAction" method="post">
 
-<input type="hidden" name="member_id" value="${sessionScope.member_id }">
+	<input type="hidden" name="member_id"
+		value="${sessionScope.member_id }">
 
 	<p>■名前</p>
 	<p>
@@ -79,10 +87,15 @@
 	<p>
 		<input type="text" size="32" name="mail_address"
 			value="${sessionScope.memberInfo.mail_address}" required>
-	<p>
-		<input type="submit" value="戻る"><input type="submit"
-			value="リセット"><input type="submit" value="更新">
 	</p>
+
+	<a href="../jp/co/aforce/transition/MenuUpdate">
+		<button type="button">戻る</button>
+	</a> <a href="../jp/co/aforce/transition/MenuUpdateReset">
+		<button type="button">リセット</button>
+	</a>
+	<button type="submit">更新</button>
+
 </form>
 
 <%@include file="../footer.html"%>

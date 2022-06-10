@@ -37,7 +37,7 @@ public class DisplayAction2 extends HttpServlet {
 				session.setAttribute("member_id", member_id);
 				session.setAttribute("memberInfo", memberInfo);
 //				request.setAttribute("memberInfo", memberInfo);
-				request.getRequestDispatcher("/views/delete.jsp").forward(request, response);
+				request.getRequestDispatcher("/views/delete2.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {
