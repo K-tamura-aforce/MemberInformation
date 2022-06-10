@@ -12,6 +12,10 @@
 </head>
 <body>
 
+<%try {%>
+<% if(session.getAttribute("name").toString() !="") {%>
+<p><h3 style="color:red"><%=session.getAttribute("name")%></h3>
+<%}} catch(Exception e) {}%>
 	<h3>会員情報登録</h3>
 
 	<form action="../jp/co/aforce/action/RegistAction" method="post">

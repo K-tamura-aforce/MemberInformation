@@ -36,7 +36,6 @@ public class DisplayAction extends HttpServlet {
 			} else {
 				session.setAttribute("member_id", member_id);
 				session.setAttribute("memberInfo", memberInfo);
-//				request.setAttribute("memberInfo", memberInfo);
 				request.getRequestDispatcher("/views/update2.jsp").forward(request, response);
 			}
 

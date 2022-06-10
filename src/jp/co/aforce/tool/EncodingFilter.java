@@ -18,10 +18,8 @@ public class EncodingFilter implements Filter {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-//		System.out.println("フィルタ前処理");
 
 		chain.doFilter(request, response);
-//		System.out.println("フィルタ後処理");
 
 	}
 
