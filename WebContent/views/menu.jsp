@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<% session.invalidate();%>
+
 <h3>メニュー</h3>
 
 <form action="../jp/co/aforce/transition/MenuRegist" method="post">

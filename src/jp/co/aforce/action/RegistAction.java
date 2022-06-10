@@ -42,13 +42,13 @@ public class RegistAction extends HttpServlet {
 			name = NullCheck.getString(lastName, firstName, sex, birthYear, birthMonth, birthDay, job, phoneNumber,
 					mailAddress);
 		} catch (Exception e1) {
-			// TODO 自動生成された catch ブロック
+
 			e1.printStackTrace();
 		}
 
 		if (!name.equals("")) {
 
-			session.setAttribute("W_CCM0001", Messages.W_CCM0001);
+			session.setAttribute("W_CCM0001", name + Messages.W_CCM0001);
 			request.getRequestDispatcher("/views/regist.jsp").forward(request, response);
 
 		} else {

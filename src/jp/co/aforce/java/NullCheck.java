@@ -2,45 +2,72 @@ package jp.co.aforce.java;
 
 public class NullCheck {
 
-	public static String getString(String last_name, String first_name, String sex, String birth_year, String birth_month, String birth_day, String job, String phone_number,String mail_address) throws Exception{
+	public static String getString(String last_name, String first_name, String sex, String birth_year,
+			String birth_month, String birth_day, String job, String phone_number, String mail_address)
+			throws Exception {
 
-	if(last_name.equals("")) {
-		return "姓";
-	}
+		if (last_name.equals("")) {
+			return "姓";
+		}
 
-	if(first_name.equals("")) {
-		return "名";
-	}
+		if (first_name.equals("")) {
+			return "名";
+		}
+		try {
+			if (sex.equals("")) {
+				return "性別";
+			}
+		} catch (Exception e) {
 
-	if(sex.equals("")) {
-		return "性別";
-	}
+			return "性別";
 
-	if(birth_year.equals("")) {
-		return "生年月日_年";
-	}
+		}
+		try {
+			if (birth_year.equals("")) {
+				return "生年月日_年";
+			}
 
-	if(birth_month.equals("")) {
-		return "生年月日_月";
-	}
+		} catch (Exception e) {
 
-	if(birth_day.equals("")) {
-		return "生年月日_日";
-	}
+			return "生年月日_年";
 
-	if(job.equals("")) {
-		return "職業";
-	}
+		}
 
-	if(phone_number.equals("")) {
-		return "電話番号";
-	}
+		try {
 
-	if(mail_address.equals("")) {
-		return "メールアドレス";
-	}
+			if (birth_month.equals("")) {
+				return "生年月日_月";
+			}
+		} catch (Exception e) {
 
-	return "";
+			return "生年月日_月";
+
+		}
+
+		try {
+
+			if (birth_day.equals("")) {
+				return "生年月日_日";
+			}
+		} catch (Exception e) {
+
+			return "生年月日_日";
+
+		}
+
+		if (job.equals("")) {
+			return "職業";
+		}
+
+		if (phone_number.equals("")) {
+			return "電話番号";
+		}
+
+		if (mail_address.equals("")) {
+			return "メールアドレス";
+		}
+
+		return "";
 
 	}
 
